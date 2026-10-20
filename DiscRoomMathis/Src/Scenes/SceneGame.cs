@@ -1,0 +1,112 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Lib;
+using Raylib_cs;
+using static Raylib_cs.Raylib;
+
+namespace DiscRoom
+{
+    public class SceneGame : AScene
+    {
+
+        private Hero _player;
+
+        private Camera _camera;
+
+
+        public SceneGame()
+        {
+            _player = new Hero();
+            _camera = new Camera();
+            _camera.Lerp = 2f;
+            _camera.Follow(_player);
+        }
+
+        public override void Update(float dt)
+        {
+            _camera.Update(dt);
+            _player.Update(dt);
+
+            DefineBoundaries();
+
+        }
+
+        public override void Draw()
+        {
+            _camera.Begin();
+            DrawCheckerboard();
+
+            _player.Draw();
+
+            _camera.End();
+        }
+
+        private  void DrawCheckerboard()
+        {
+            // Taille d'une case (en pixels)
+            int tileSize = 32;
+            int rows = 16;
+            int cols = 16;
+
+            for (int i = 0; i <= rows; i++)
+            {
+                for (int j = 0; j <= cols; j++)
+                {
+                    int x = j * tileSize;
+                    int y = i * tileSize;
+
+                    // alterne blanc / gris foncés
+                    Color c = ((i + j) % 2 == 0) ? Color.White : new Color(150, 150, 150, 255);
+
+                    DrawRectangle(x, y, tileSize, tileSize, c);
+                }
+            }
+        }
+
+
+        private void DefineBoundaries()
+        {
+            // Boundaries basées sur la grille utilisée dans Draw()
+            int tileSize = 32;
+            int rows = 16;
+            int cols = 16;
+
+            float worldLeft = -10f;
+            float worldTop = -30f;
+            float worldRight = (cols + 1.5f) * tileSize; // on dessine de 0 à cols inclus
+            float worldBottom = (rows + 1) * tileSize;
+
+            var hb = _player.Hitbox;
+
+            // Gauche
+            if (hb.X < worldLeft)
+            {
+                _player.X += worldLeft - hb.X;
+                _player.VelocityX = 0f;
+            }
+
+            // Droite
+            if (hb.X + hb.Width > worldRight)
+            {
+                _player.X -= (hb.X + hb.Width) - worldRight;
+                _player.VelocityX = 0f;
+            }
+
+            // Haut
+            if (hb.Y < worldTop)
+            {
+                _player.Y += worldTop - hb.Y;
+                _player.VelocityY = 0f;
+            }
+
+            // Bas
+            if (hb.Y + hb.Height > worldBottom)
+            {
+                _player.Y -= (hb.Y + hb.Height) - worldBottom;
+                _player.VelocityY = 0f;
+            }
+        }
+
+    }
+}

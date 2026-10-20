@@ -1,0 +1,50 @@
+# ==========================================
+# Build & Output Directories (.NET / C#)
+# ==========================================
+[Bb]in/
+[Oo]bj/
+out/
+publish/
+
+# ==========================================
+# Visual Studio / VS Code
+# ==========================================
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==========================================
+# User-specific & Temp Files
+# ==========================================
+*.suo
+*.user
+*.userprefs
+*.log
+*.tmp
+
+# ==========================================
+# NuGet Packages
+# ==========================================
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# ==========================================
+# OS & System Files
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# GitHub Desktop & Git Metadata
+# ==========================================
+.net/
+*.lock

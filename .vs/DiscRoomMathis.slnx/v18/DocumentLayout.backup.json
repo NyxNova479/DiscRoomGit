@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\lib\\graphics\\sprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\lib\\graphics\\sprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\lib\\graphics\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\lib\\graphics\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sprite.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T11:11:22.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Spritesheet.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T10:28:14.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SceneGame.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs*",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Scenes\\SceneGame.cs*",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAEsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T10:20:57.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Saw.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Saw.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Saw.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Saw.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Saw.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T10:19:51.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Hero.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Hero.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Hero.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Hero.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Hero.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAkwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T10:19:41.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Program.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Program.cs",
+              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Program.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T10:11:28.62Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
