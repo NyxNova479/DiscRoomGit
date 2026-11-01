@@ -17,7 +17,7 @@ namespace DiscRoom
             InitAudioDevice();
 
             SceneManager sceneManager = new SceneManager();
-            sceneManager.ChangeScene(new SceneGame());
+            sceneManager.ChangeScene(new SceneMenu());   
 
 
             while (!WindowShouldClose())

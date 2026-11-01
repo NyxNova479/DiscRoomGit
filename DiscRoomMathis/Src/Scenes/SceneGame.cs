@@ -10,6 +10,7 @@ namespace DiscRoom
     public class SceneGame : AScene
     {
 
+
         private Hero _player;
 
         private Camera _camera;
@@ -17,6 +18,14 @@ namespace DiscRoom
         private  Rectangle _arena = new Rectangle(0, 0, 17 * 32, 17 * 32); // même taille que la grille dessinée
         private SawManager _sawManager;
         private bool _isGameOver = false;
+
+        private const float DEATH_DELAY = 1f;
+
+        private float _score = 0f;
+        private const float SCOREDISPLAYX = 10;
+        private const float SCOREDISPLAYY= -100;
+        private float _deathTimer = 0f;
+        private bool _isPlayerDead = false;
 
         public SceneGame()
         {
@@ -27,14 +36,20 @@ namespace DiscRoom
             _camera.Follow(_player);
         }
 
+
         public override void Update(float dt)
         {
             _camera.Update(dt);
 
-            if (_isGameOver) return;
+            if (_isPlayerDead)
+            {
+                UpdateDeath(dt);
+                return;
+            }
 
             _player.Update(dt);
             _sawManager.Update(dt);
+            _score += dt;
 
             DefineBoundaries();
             CheckPlayerDeath();
@@ -45,6 +60,9 @@ namespace DiscRoom
             _camera.Begin();
             DrawCheckerboard();
 
+
+
+            DrawText("Score: " + _score.ToString("F2"), (int)SCOREDISPLAYX, (int)SCOREDISPLAYY, 50, Color.White);
             _sawManager.Draw();
             _player.Draw();
 
@@ -122,12 +140,25 @@ namespace DiscRoom
             if (_player.IsInvincible) return;
             if (!_sawManager.IsHeroHit(_player.Hitbox)) return;
 
-            _isGameOver = true;
-            _camera.Shake(-6, 6, 0.4f); // bonus : screen shake à la mort
+            _isPlayerDead = true;
+            _camera.Shake(-6, 6, 0.4f);
+        }
+
+        /// <summary>
+        /// Leaves a short moment (with the screen shake) before showing the game over screen
+        /// </summary>
+        private void UpdateDeath(float dt)
+        {
+            _deathTimer += dt;
+
+            if (_deathTimer < DEATH_DELAY) return;
+
+            ChangeScene(new SceneGameOver(_score));
         }
 
         public override void Unload()
         {
+            _player.Unload();   
             _sawManager.Reset(); // libère les textures des scies
         }
 

@@ -26,7 +26,7 @@ namespace Lib
 
         public float MaxAlpha { get; set; } = 160f;
 
-        public Color Tint { get; set; } = new Color(60, 160, 255, 255);
+        public Color Tint { get; set; } = new Color(0, 0, 255, 255);
 
         public AfterImageTrail(Spritesheet owner)
         {
