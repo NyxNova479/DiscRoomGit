@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 using Lib;
 using Raylib_cs;
@@ -14,12 +15,27 @@ namespace DiscRoom
         private const float FRICTION = 100;
 
         // Concerns the dash
-        private  float _dashForce = 50;
-        private bool _dashed = false;
-        private float _timer = 0f;
-        private const float DASH_COOLDOWN = 5f;
+        private const float DASH_SPEED = 500f;
+        private const float DASH_DURATION = 0.2f;
+        private const float DASH_COOLDOWN = 1.5f;
+        private const float DASH_ALPHA = 120f;
+        private const float TRAIL_INTERVAL = 0.02f;
 
-        
+        private readonly AfterImageTrail _trail;
+        private float _trailTimer = 0f;
+
+        private bool _isDashing = false;
+        private float _dashTimer = 0f;
+        private float _cooldownTimer = 0f;
+        private Vector2 _dashDirection = Vector2.Zero;
+        private Vector2 _lastDirection = new Vector2(0, 1);
+
+        /// <summary>
+        /// The hero can't be killed while dashing
+        /// </summary>
+        public bool IsInvincible => _isDashing;
+
+
 
         public Hero() : base("assets/images/magician.png", 72 / 3, 192 / 8)
         {
@@ -29,6 +45,9 @@ namespace DiscRoom
             FrictionX = FRICTION;
             FrictionY = FRICTION;
             Scale = new System.Numerics.Vector2(2);
+            _trail = new AfterImageTrail(this);
+            HitboxOffset = new Rectangle(14, 20, -28, -24); // hitbox réduite, à ajuster avec IsHitboxVisible = true
+
         }
 
         /// <summary>
@@ -37,7 +56,7 @@ namespace DiscRoom
         private void LoadAnimations()
         {
             Animation.Add("WALK_DOWN", [0, 1, 2]);
-            Animation.Add("WALK_UP", [12, 13, 14]);
+            Animation.Add("WALK_UP", [13, 14, 15]);
             Animation.Add("WALK_RIGHT", [7, 8, 9]);
             Animation.Add("WALK_LEFT", [19, 20, 21]);
             Animation.Add("WALK_DIAG_RIGHT_DOWN", [4, 5, 6]);
@@ -50,44 +69,55 @@ namespace DiscRoom
         {
             base.Update(dt);
 
-            ApplyMovement();
+            UpdateCooldown(dt);
 
-            if (IsKeyPressed(KeyboardKey.Space) &&_timer >= DASH_COOLDOWN)
+            if (_isDashing)
             {
                 UpdateDash(dt);
+                UpdateTrail(dt);
+            }
+            else
+            {
+                ApplyMovement();
+                TryStartDash();
             }
 
+            _trail.Update(dt);
             HandleAnimations();
+        }
 
+        /// <summary>
+        /// Returns the normalized direction asked by the player (zero if no input)
+        /// </summary>
+        private Vector2 GetInputDirection()
+        {
+            Vector2 direction = Vector2.Zero;
 
+            if (IsKeyDown(KeyboardKey.Right)) direction.X += 1;
+            if (IsKeyDown(KeyboardKey.Left)) direction.X -= 1;
+            if (IsKeyDown(KeyboardKey.Down)) direction.Y += 1;
+            if (IsKeyDown(KeyboardKey.Up)) direction.Y -= 1;
+
+            if (direction != Vector2.Zero)
+                direction = Vector2.Normalize(direction);
+
+            return direction;
         }
 
         /// <summary>
         /// Reads and applies the directionals Inputs of the player 
         /// </summary>
+        /// <summary>
+        /// Reads and applies the directional inputs of the player
+        /// </summary>
         private void ApplyMovement()
         {
-            if (IsKeyDown(KeyboardKey.Right))
-            {
-                VelocityX = SPEED;
+            Vector2 direction = GetInputDirection();
 
-            }
-            if (IsKeyDown(KeyboardKey.Left))
-            {
-                VelocityX = -SPEED;
+            if (direction == Vector2.Zero) return;
 
-            }
-            if (IsKeyDown(KeyboardKey.Up))
-            {
-                VelocityY = -SPEED;
-
-
-            }
-            if (IsKeyDown(KeyboardKey.Down))
-            {
-                VelocityY = SPEED;
-
-            }
+            _lastDirection = direction;
+            Velocity = direction * SPEED;
         }
 
         /// <summary>
@@ -113,19 +143,59 @@ namespace DiscRoom
 
             if(VelocityX == 0 && VelocityY == 0) Animation.Stop();
         }
+        private void UpdateCooldown(float dt)
+        {
+            if (_cooldownTimer > 0f) _cooldownTimer -= dt;
+        }
 
         /// <summary>
-        /// Applies a force to the player's movement
+        /// Starts a dash if the player asks for it and the cooldown is over
         /// </summary>
-        /// <param name="dt"></param>
+        private void TryStartDash()
+        {
+            if (!IsKeyPressed(KeyboardKey.Space) || _cooldownTimer > 0f) return;
+
+            _isDashing = true;
+            _dashTimer = DASH_DURATION;
+            _cooldownTimer = DASH_COOLDOWN;
+
+            Vector2 inputDirection = GetInputDirection();
+            _dashDirection = (inputDirection != Vector2.Zero) ? inputDirection : _lastDirection;
+
+            Alpha = DASH_ALPHA;
+        }
+
+        /// <summary>
+        /// Applies a constant force to the player until the dash ends
+        /// </summary>
         private void UpdateDash(float dt)
         {
-            if (_dashed) return;
+            Velocity = _dashDirection * DASH_SPEED;
+            _dashTimer -= dt;
 
-            _timer += dt;
+            if (_dashTimer > 0f) return;
 
+            _isDashing = false;
+            Alpha = 255f;
+        }
 
+        /// <summary>
+        /// Leaves an afterimage at a regular rhythm while dashing
+        /// </summary>
+        private void UpdateTrail(float dt)
+        {
+            _trailTimer += dt;
 
+            if (_trailTimer < TRAIL_INTERVAL) return;
+
+            _trailTimer = 0f;
+            _trail.Add();
+        }
+
+        public override void Draw()
+        {
+            _trail.Draw();   // d'abord la traînée, puis le héros par-dessus
+            base.Draw();
         }
     }
 }

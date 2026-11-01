@@ -1,29 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\",
+  "WorkspaceRootPath": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\src\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\src\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\lib\\graphics\\afterimagetrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\lib\\graphics\\afterimagetrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\src\\saws\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\saws\\saw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\src\\saws\\sawmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\saws\\sawmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\src\\scenes\\scenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\lib\\graphics\\sprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\lib\\graphics\\sprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\lib\\graphics\\sprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\m.lebon\\documents\\projets\\csharprudy\\discroommathis\\discroommathis\\lib\\graphics\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|c:\\users\\laurent\\documents\\rubika\\cour_c#\\annee3\\discroomgit\\discroommathis\\lib\\graphics\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F55B7531-DC7A-B635-19A7-C92DE077DAC5}|DiscRoomMathis\\DiscRoomMathis.csproj|solutionrelative:discroommathis\\lib\\graphics\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,80 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "AfterImageTrail.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\AfterImageTrail.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Lib\\Graphics\\AfterImageTrail.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\AfterImageTrail.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Lib\\Graphics\\AfterImageTrail.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T09:38:41.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SawManager.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Saws\\SawManager.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Saws\\SawManager.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Saws\\SawManager.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Saws\\SawManager.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwAMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T09:27:02.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Sprite.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
               "RelativeDocumentMoniker": "DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
               "RelativeToolTip": "DiscRoomMathis\\Lib\\Graphics\\Sprite.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T11:11:22.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T11:11:22.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Spritesheet.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
               "RelativeDocumentMoniker": "DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
               "RelativeToolTip": "DiscRoomMathis\\Lib\\Graphics\\Spritesheet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T10:28:14.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T10:28:14.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "SceneGame.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
               "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs*",
-              "RelativeToolTip": "DiscRoomMathis\\Src\\Scenes\\SceneGame.cs*",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAAEsAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Scenes\\SceneGame.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwIMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-29T10:20:57.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Saw.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Saw.cs",
-              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Saw.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Saw.cs",
-              "RelativeToolTip": "DiscRoomMathis\\Src\\Saw.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAVAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Saws\\Saw.cs",
+              "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Saws\\Saw.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Saws\\Saw.cs",
+              "RelativeToolTip": "DiscRoomMathis\\Src\\Saws\\Saw.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAgwJYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-29T10:19:51.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Hero.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Hero.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Hero.cs",
               "RelativeDocumentMoniker": "DiscRoomMathis\\Src\\Hero.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Src\\Hero.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Src\\Hero.cs",
               "RelativeToolTip": "DiscRoomMathis\\Src\\Hero.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAkwH4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAmwMYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-29T10:19:41.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Program.cs",
               "RelativeDocumentMoniker": "DiscRoomMathis\\Program.cs",
-              "ToolTip": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\Program.cs",
+              "ToolTip": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\Program.cs",
               "RelativeToolTip": "DiscRoomMathis\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

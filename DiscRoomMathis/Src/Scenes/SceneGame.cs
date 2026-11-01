@@ -14,9 +14,13 @@ namespace DiscRoom
 
         private Camera _camera;
 
+        private  Rectangle _arena = new Rectangle(0, 0, 17 * 32, 17 * 32); // même taille que la grille dessinée
+        private SawManager _sawManager;
+        private bool _isGameOver = false;
 
         public SceneGame()
         {
+            _sawManager = new SawManager(_arena);
             _player = new Hero();
             _camera = new Camera();
             _camera.Lerp = 2f;
@@ -26,10 +30,14 @@ namespace DiscRoom
         public override void Update(float dt)
         {
             _camera.Update(dt);
+
+            if (_isGameOver) return;
+
             _player.Update(dt);
+            _sawManager.Update(dt);
 
             DefineBoundaries();
-
+            CheckPlayerDeath();
         }
 
         public override void Draw()
@@ -37,6 +45,7 @@ namespace DiscRoom
             _camera.Begin();
             DrawCheckerboard();
 
+            _sawManager.Draw();
             _player.Draw();
 
             _camera.End();
@@ -106,6 +115,20 @@ namespace DiscRoom
                 _player.Y -= (hb.Y + hb.Height) - worldBottom;
                 _player.VelocityY = 0f;
             }
+        }
+
+        private void CheckPlayerDeath()
+        {
+            if (_player.IsInvincible) return;
+            if (!_sawManager.IsHeroHit(_player.Hitbox)) return;
+
+            _isGameOver = true;
+            _camera.Shake(-6, 6, 0.4f); // bonus : screen shake à la mort
+        }
+
+        public override void Unload()
+        {
+            _sawManager.Reset(); // libère les textures des scies
         }
 
     }
