@@ -21,9 +21,11 @@ namespace DiscRoom
 
         private const float DEATH_DELAY = 1f;
 
-        private float _score = 0f;
-        private const float SCOREDISPLAYX = 10;
-        private const float SCOREDISPLAYY= -100;
+        private float _gameTimer = 0f;
+        private float _scoreMins = 0f;
+        private float _scoreSecs = 0f;
+        private const float SCOREDISPLAYX = 550;
+        private const float SCOREDISPLAYY= 20;
         private float _deathTimer = 0f;
         private bool _isPlayerDead = false;
 
@@ -32,7 +34,7 @@ namespace DiscRoom
             _sawManager = new SawManager(_arena);
             _player = new Hero();
             _camera = new Camera();
-            _camera.Lerp = 2f;
+            _camera.Lerp = 1f;
             _camera.Follow(_player);
         }
 
@@ -49,10 +51,22 @@ namespace DiscRoom
 
             _player.Update(dt);
             _sawManager.Update(dt);
-            _score += dt;
+            UpdateScore(dt);
 
             DefineBoundaries();
             CheckPlayerDeath();
+        }
+
+        /// <summary>
+        /// Increase the score and translate it into  mins and secs
+        /// </summary>
+        /// <param name="dt"></param>
+        private void UpdateScore(float dt)
+        {
+            _gameTimer += dt;
+
+            _scoreMins = _gameTimer / 60;
+            _scoreSecs = _gameTimer % 60;
         }
 
         public override void Draw()
@@ -62,7 +76,7 @@ namespace DiscRoom
 
 
 
-            DrawText("Score: " + _score.ToString("F2"), (int)SCOREDISPLAYX, (int)SCOREDISPLAYY, 50, Color.White);
+            DrawText("Score: " + _scoreMins.ToString("F0") + ":" + _scoreSecs.ToString("F2"), (int)SCOREDISPLAYX, (int)SCOREDISPLAYY, 30, Color.White);
             _sawManager.Draw();
             _player.Draw();
 
@@ -153,7 +167,7 @@ namespace DiscRoom
 
             if (_deathTimer < DEATH_DELAY) return;
 
-            ChangeScene(new SceneGameOver(_score));
+            ChangeScene(new SceneGameOver(_gameTimer));
         }
 
         public override void Unload()

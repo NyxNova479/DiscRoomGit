@@ -45,3 +45,4 @@ C:\Users\Laurent\Documents\Rubika\Cour_C#\Annee3\DiscRoomGit\DiscRoomMathis\obj\
 C:\Users\Laurent\Documents\Rubika\Cour_C#\Annee3\DiscRoomGit\DiscRoomMathis\obj\Debug\net10.0\DiscRoomMathis.pdb
 C:\Users\Laurent\Documents\Rubika\Cour_C#\Annee3\DiscRoomGit\DiscRoomMathis\obj\Debug\net10.0\DiscRoomMathis.genruntimeconfig.cache
 C:\Users\Laurent\Documents\Rubika\Cour_C#\Annee3\DiscRoomGit\DiscRoomMathis\obj\Debug\net10.0\ref\DiscRoomMathis.dll
+C:\Users\m.lebon\Documents\Projets\CsharpRudy\DiscRoomMathis\DiscRoomMathis\obj\Debug\net10.0\DiscRoomMathis.sourcelink.json

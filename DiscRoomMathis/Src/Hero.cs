@@ -11,8 +11,15 @@ namespace DiscRoom
     public class Hero : Spritesheet
     {
 
-        private const float SPEED = 150;
-        private const float FRICTION = 100;
+        private const float SPEED = 120;
+        private const float FRICTION = 250;
+        private const float STARTX = 544/2; // Center of the grid
+        private const float STARTY = 544/2;
+
+        private const float BOOSTDISPLAYX = 550;
+        private const float BOOSTDISPLAYY = 110;
+
+
 
         // Concerns the dash
         private const float DASH_SPEED = 500f;
@@ -35,6 +42,8 @@ namespace DiscRoom
         /// </summary>
         public bool IsInvincible => _isDashing;
 
+        private bool[] _cheatCode = new bool[10];
+
 
 
         public Hero() : base("assets/images/magician.png", 72 / 3, 192 / 8)
@@ -42,11 +51,27 @@ namespace DiscRoom
 
             LoadAnimations();
 
+            X = STARTX;
+            Y = STARTY;
+
             FrictionX = FRICTION;
             FrictionY = FRICTION;
             Scale = new System.Numerics.Vector2(2);
             _trail = new AfterImageTrail(this);
             HitboxOffset = new Rectangle(14, 20, -28, -24); // hitbox réduite, à ajuster avec IsHitboxVisible = true
+
+            _cheatCode[0] = IsKeyPressed(KeyboardKey.Up);
+            _cheatCode[1] = IsKeyPressed(KeyboardKey.Up);
+            _cheatCode[2] = IsKeyPressed(KeyboardKey.Down);
+            _cheatCode[3] = IsKeyPressed(KeyboardKey.Down);
+            _cheatCode[4] = IsKeyPressed(KeyboardKey.Left);
+            _cheatCode[5] = IsKeyPressed(KeyboardKey.Right);
+            _cheatCode[6] = IsKeyPressed(KeyboardKey.Left);
+            _cheatCode[7] = IsKeyPressed(KeyboardKey.Right);
+            _cheatCode[8] = IsKeyPressed(KeyboardKey.B);
+            _cheatCode[9] = IsKeyPressed(KeyboardKey.Q);
+            _cheatCode[10] = IsKeyPressed(KeyboardKey.Enter);
+
 
         }
 
@@ -192,9 +217,17 @@ namespace DiscRoom
             _trail.Add();
         }
 
+        private void CheckCheatCode()
+        {
+
+        }
+
         public override void Draw()
         {
             _trail.Draw();   // d'abord la traînée, puis le héros par-dessus
+            DrawText("Boost", (int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY - 20, 20, Color.Red); // DrawText un peu au dessus du rectangle
+            if (!_isDashing && _cooldownTimer <= 0) DrawRectangle((int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY, 50, 50, Color.Red);
+            else DrawRectangle((int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY, 50, 50, Color.Black);
             base.Draw();
         }
     }

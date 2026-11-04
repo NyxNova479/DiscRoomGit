@@ -15,9 +15,9 @@ namespace DiscRoom
         private const int MAX_SAWS = 25;
 
         private const float MIN_DIAMETER = 40f;
-        private const float MAX_DIAMETER = 120f;
+        private const float MAX_DIAMETER = 100f;
         private const float MIN_SPEED = 100f;
-        private const float MAX_SPEED = 300f;
+        private const float MAX_SPEED = 250f;
 
         private readonly List<Saw> _saws = new List<Saw>();
         private readonly Rectangle _arena;
