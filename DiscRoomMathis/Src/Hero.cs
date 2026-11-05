@@ -13,11 +13,11 @@ namespace DiscRoom
 
         private const float SPEED = 120;
         private const float FRICTION = 250;
-        private const float STARTX = 544/2; // Center of the grid
-        private const float STARTY = 544/2;
+        private const float START_X = 544/2; // Center of the grid
+        private const float START_Y = 544/2;
 
-        private const float BOOSTDISPLAYX = 550;
-        private const float BOOSTDISPLAYY = 110;
+        private const float BOOST_DISPLAY_X = 550;
+        private const float BOOST_DISPLAY_Y = 110;
 
 
 
@@ -37,12 +37,19 @@ namespace DiscRoom
         private Vector2 _dashDirection = Vector2.Zero;
         private Vector2 _lastDirection = new Vector2(0, 1);
 
-        /// <summary>
-        /// The hero can't be killed while dashing
-        /// </summary>
-        public bool IsInvincible => _isDashing;
+        private const float CHEAT_DURATION = 10;
+        private const float CHEAT_ALPHA = 5f;
 
-        private bool[] _cheatCode = new bool[10];
+        private static readonly KeyboardKey[] CHEAT_SEQUENCE = [KeyboardKey.Up, KeyboardKey.Up, KeyboardKey.Down, KeyboardKey.Down, KeyboardKey.Left, KeyboardKey.Right, KeyboardKey.Left, KeyboardKey.Right, KeyboardKey.B, KeyboardKey.Q, KeyboardKey.Enter];
+
+        private int _cheatIndex = 0;
+        private bool _isCheatActive = false;
+        private float _cheatTimer = 0f;
+
+        /// <summary>
+        /// The hero can't be killed while dashing or while the cheatCode is active
+        /// </summary>
+        public bool IsInvincible => _isDashing || _isCheatActive;
 
 
 
@@ -51,8 +58,8 @@ namespace DiscRoom
 
             LoadAnimations();
 
-            X = STARTX;
-            Y = STARTY;
+            X = START_X;
+            Y = START_Y;
 
             FrictionX = FRICTION;
             FrictionY = FRICTION;
@@ -60,20 +67,11 @@ namespace DiscRoom
             _trail = new AfterImageTrail(this);
             HitboxOffset = new Rectangle(14, 20, -28, -24); // hitbox réduite, à ajuster avec IsHitboxVisible = true
 
-            _cheatCode[0] = IsKeyPressed(KeyboardKey.Up);
-            _cheatCode[1] = IsKeyPressed(KeyboardKey.Up);
-            _cheatCode[2] = IsKeyPressed(KeyboardKey.Down);
-            _cheatCode[3] = IsKeyPressed(KeyboardKey.Down);
-            _cheatCode[4] = IsKeyPressed(KeyboardKey.Left);
-            _cheatCode[5] = IsKeyPressed(KeyboardKey.Right);
-            _cheatCode[6] = IsKeyPressed(KeyboardKey.Left);
-            _cheatCode[7] = IsKeyPressed(KeyboardKey.Right);
-            _cheatCode[8] = IsKeyPressed(KeyboardKey.B);
-            _cheatCode[9] = IsKeyPressed(KeyboardKey.Q);
-            _cheatCode[10] = IsKeyPressed(KeyboardKey.Enter);
 
 
         }
+
+
 
         /// <summary>
         /// Adds all the animations that the player needs
@@ -107,6 +105,11 @@ namespace DiscRoom
                 TryStartDash();
             }
 
+            CheckCheatCode();
+            UpdateCheatBonus(dt);
+
+            if (_isCheatActive) Alpha = CHEAT_ALPHA;
+
             _trail.Update(dt);
             HandleAnimations();
         }
@@ -131,9 +134,6 @@ namespace DiscRoom
 
         /// <summary>
         /// Reads and applies the directionals Inputs of the player 
-        /// </summary>
-        /// <summary>
-        /// Reads and applies the directional inputs of the player
         /// </summary>
         private void ApplyMovement()
         {
@@ -217,17 +217,57 @@ namespace DiscRoom
             _trail.Add();
         }
 
+        /// <summary>
+        /// Checks if the player is doing the cheat code sequence
+        /// </summary>
+
         private void CheckCheatCode()
         {
+            int pressedKey = 0;
+
+            while ((pressedKey = (int)GetKeyPressed()) != 0)
+            {
+                if (pressedKey == (int)CHEAT_SEQUENCE[_cheatIndex]) _cheatIndex++;
+                else _cheatIndex = (pressedKey == (int)CHEAT_SEQUENCE[0]) ? 1 : 0;
+
+                if (_cheatIndex < CHEAT_SEQUENCE.Length) continue;
+
+                _cheatIndex = 0;
+                _isCheatActive = true;
+                _cheatTimer = CHEAT_DURATION;
+            }
+        }
+
+        /// <summary>
+        /// Grants invicibility for CHEAT_DURATION seconds
+        /// </summary>
+        /// <param name="dt"></param>
+
+        private void UpdateCheatBonus(float dt)
+        {
+
+            if (!_isCheatActive) return;
+
+            _cheatTimer -= dt;
+
+            if (_cheatTimer <= 0f)
+            {
+                _isCheatActive = false;
+                Alpha = 255f;
+            }
+
 
         }
+        
 
         public override void Draw()
         {
             _trail.Draw();   // d'abord la traînée, puis le héros par-dessus
-            DrawText("Boost", (int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY - 20, 20, Color.Red); // DrawText un peu au dessus du rectangle
-            if (!_isDashing && _cooldownTimer <= 0) DrawRectangle((int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY, 50, 50, Color.Red);
-            else DrawRectangle((int)BOOSTDISPLAYX, (int)BOOSTDISPLAYY, 50, 50, Color.Black);
+            DrawText("Boost", (int)BOOST_DISPLAY_X, (int)BOOST_DISPLAY_Y - 20, 20, Color.Red); // DrawText un peu au dessus du rectangle
+            if (!_isDashing && _cooldownTimer <= 0) DrawRectangle((int)BOOST_DISPLAY_X, (int)BOOST_DISPLAY_Y, 50, 50, Color.Red);
+            else DrawRectangle((int)BOOST_DISPLAY_X, (int)BOOST_DISPLAY_Y, 50, 50, Color.Black);
+
+            if(_isCheatActive) DrawText("Cheat Activated for " + _cheatTimer.ToString("F0"), (int)BOOST_DISPLAY_X, (int)BOOST_DISPLAY_Y + 60, 20, Color.Yellow);
             base.Draw();
         }
     }

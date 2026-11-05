@@ -37,7 +37,15 @@ namespace Lib
 
             ShakeData = new ShakeData();
 
+            Anchor = Vector2.Zero;
+            FollowStrength = 1f;
+
         }
+
+        // Ajout
+        public Vector2 Anchor { get; private set; }
+
+        public float FollowStrength { get; set; }
 
         public void Update(float dt)
         {
@@ -49,6 +57,8 @@ namespace Lib
 
             if (FollowingSprite != null) UpdateFollow(dt);
             if (ShakeData.Duration > 0f) UpdateShake(dt);
+
+
 
         }
 
@@ -91,9 +101,11 @@ namespace Lib
         {
             if (FollowingSprite == null) return;
 
-            Vector2 finalPos = FollowingSprite.Position + Offset;
+            //Vector2 finalPos = FollowingSprite.Position + Offset;
+            Vector2 targetPosition = FollowingSprite.Position + Offset;
+            Vector2 finalPos = Anchor + (targetPosition - Anchor) * FollowStrength;
 
-            if(WorldBounds.Width > 0f && WorldBounds.Height > 0f)
+            if (WorldBounds.Width > 0f && WorldBounds.Height > 0f)
             {
                 float halfViewWidth = GetScreenWidth() / (2f * _camera.Zoom);
                 float halfViewHeight = GetScreenHeight() / (2f * _camera.Zoom);
@@ -118,6 +130,17 @@ namespace Lib
                 _camera.Target = Vector2.Lerp(_camera.Target, finalPos, finalLerp);
             }
 
+
+
+        }
+
+        /// <summary>
+        /// Defines the point the camera rests on and places the camera there immediately
+        /// </summary>
+        public void SetAnchor(Vector2 anchor)
+        {
+            Anchor = anchor;
+            _camera.Target = anchor;
         }
 
     }

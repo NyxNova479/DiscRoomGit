@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\DiscRoomMathis.csproj": {}
+    "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\DiscRoomMathis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\DiscRoomMathis.csproj": {
+    "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\DiscRoomMathis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\DiscRoomMathis.csproj",
+        "projectUniqueName": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\DiscRoomMathis.csproj",
         "projectName": "DiscRoomMathis",
-        "projectPath": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\DiscRoomMathis.csproj",
-        "packagesPath": "C:\\Users\\m.lebon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\obj\\",
+        "projectPath": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\DiscRoomMathis.csproj",
+        "packagesPath": "C:\\Users\\Laurent\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\m.lebon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Laurent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

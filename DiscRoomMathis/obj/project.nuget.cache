@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Uh9/5U8daLI=",
+  "dgSpecHash": "7fUDNsaXqKk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\m.lebon\\Documents\\Projets\\CsharpRudy\\DiscRoomMathis\\DiscRoomMathis\\DiscRoomMathis.csproj",
+  "projectFilePath": "C:\\Users\\Laurent\\Documents\\Rubika\\Cour_C#\\Annee3\\DiscRoomGit\\DiscRoomMathis\\DiscRoomMathis.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\m.lebon\\.nuget\\packages\\raylib-cs\\8.1.0\\raylib-cs.8.1.0.nupkg.sha512"
+    "C:\\Users\\Laurent\\.nuget\\packages\\raylib-cs\\8.1.0\\raylib-cs.8.1.0.nupkg.sha512"
   ],
   "logs": []
 }

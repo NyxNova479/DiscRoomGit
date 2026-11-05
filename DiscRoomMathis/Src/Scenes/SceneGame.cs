@@ -24,17 +24,20 @@ namespace DiscRoom
         private float _gameTimer = 0f;
         private float _scoreMins = 0f;
         private float _scoreSecs = 0f;
-        private const float SCOREDISPLAYX = 550;
-        private const float SCOREDISPLAYY= 20;
+        private const float SCORE_DISPLAY_X = 550;
+        private const float SCORE_DISPLAY_Y= 20;
         private float _deathTimer = 0f;
         private bool _isPlayerDead = false;
+
+        private const float CAMERA_FOLLOW_STRENGTH = 0.10f;
 
         public SceneGame()
         {
             _sawManager = new SawManager(_arena);
             _player = new Hero();
             _camera = new Camera();
-            _camera.Lerp = 1f;
+            _camera.SetAnchor(new System.Numerics.Vector2(_arena.X + _arena.Width * 0.5f, _arena.Y + _arena.Height * 0.5f));
+            _camera.FollowStrength = CAMERA_FOLLOW_STRENGTH;
             _camera.Follow(_player);
         }
 
@@ -65,7 +68,7 @@ namespace DiscRoom
         {
             _gameTimer += dt;
 
-            _scoreMins = _gameTimer / 60;
+            _scoreMins = (int)(_gameTimer / 60);
             _scoreSecs = _gameTimer % 60;
         }
 
@@ -76,7 +79,8 @@ namespace DiscRoom
 
 
 
-            DrawText("Score: " + _scoreMins.ToString("F0") + ":" + _scoreSecs.ToString("F2"), (int)SCOREDISPLAYX, (int)SCOREDISPLAYY, 30, Color.White);
+
+            DrawText("Score: " + _scoreMins + ":" + _scoreSecs.ToString("00.00"), (int)SCORE_DISPLAY_X, (int)SCORE_DISPLAY_Y, 30, Color.White);
             _sawManager.Draw();
             _player.Draw();
 
