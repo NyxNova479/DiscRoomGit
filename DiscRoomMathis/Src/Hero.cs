@@ -25,7 +25,7 @@ namespace DiscRoom
         private const float DASH_SPEED = 500f;
         private const float DASH_DURATION = 0.2f;
         private const float DASH_COOLDOWN = 1.5f;
-        private const float DASH_ALPHA = 120f;
+        private const float DASH_ALPHA = 0.7f;
         private const float TRAIL_INTERVAL = 0.02f;
 
         private readonly AfterImageTrail _trail;
@@ -38,7 +38,7 @@ namespace DiscRoom
         private Vector2 _lastDirection = new Vector2(0, 1);
 
         private const float CHEAT_DURATION = 10;
-        private const float CHEAT_ALPHA = 5f;
+        private const float CHEAT_ALPHA = 0.5f;
 
         private static readonly KeyboardKey[] CHEAT_SEQUENCE = [KeyboardKey.Up, KeyboardKey.Up, KeyboardKey.Down, KeyboardKey.Down, KeyboardKey.Left, KeyboardKey.Right, KeyboardKey.Left, KeyboardKey.Right, KeyboardKey.B, KeyboardKey.Q, KeyboardKey.Enter];
 
