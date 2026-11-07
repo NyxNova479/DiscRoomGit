@@ -7,6 +7,9 @@ namespace DiscRoom
 {
     public class SceneGameOver : AScene
     {
+
+        private Music _gameOverMusic;
+
         private readonly float _score;
 
         private float _bestScore;
@@ -21,6 +24,9 @@ namespace DiscRoom
         {
             _isNewBestScore = ScoreStorage.TrySaveBestScore(_score);
             _bestScore = ScoreStorage.LoadBestScore();
+
+            _gameOverMusic = LoadMusicStream("assets/sounds/gameOverMusic.mp3");
+            PlayMusicStream(_gameOverMusic);
         }
 
         public override void Update(float dt)
@@ -34,7 +40,10 @@ namespace DiscRoom
             if (IsKeyPressed(KeyboardKey.M))
             {
                 ChangeScene(new SceneMenu());
+                return;
             }
+
+            UpdateMusicStream(_gameOverMusic);
         }
 
         public override void Draw()
@@ -55,6 +64,12 @@ namespace DiscRoom
 
             TextUtils.DrawTextCentered("ENTER : restart", centerX, 400f, 32, Color.White);
             TextUtils.DrawTextCentered("M : main menu", centerX, 450f, 32, Color.White);
+        }
+
+        public override void Unload()
+        {
+            UnloadMusicStream(_gameOverMusic);
+            base.Unload();
         }
     }
 }

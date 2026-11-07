@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiscRoomMathis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcfd2c4651afa10dbadd04b11e15072881094da9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0883394d09691b097eccc66cb68d7592eb4308a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiscRoomMathis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiscRoomMathis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

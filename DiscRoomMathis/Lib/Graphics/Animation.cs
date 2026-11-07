@@ -57,7 +57,7 @@ namespace Lib
                 return;
             }
 
-            if (CurrentAnimation == name) return;
+            if (CurrentAnimation == name && IsPlaying) return;
 
             CurrentAnimation = name;
             Speed = Math.Max(1, speedInFPS);

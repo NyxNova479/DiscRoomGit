@@ -10,6 +10,8 @@ namespace DiscRoom
     public class SceneGame : AScene
     {
 
+        private Sound _heroDeathSound;
+        private Music _backgroundMusic;
 
         private Hero _player;
 
@@ -39,6 +41,10 @@ namespace DiscRoom
             _camera.SetAnchor(new System.Numerics.Vector2(_arena.X + _arena.Width * 0.5f, _arena.Y + _arena.Height * 0.5f));
             _camera.FollowStrength = CAMERA_FOLLOW_STRENGTH;
             _camera.Follow(_player);
+
+            _heroDeathSound = LoadSound("assets/sounds/die.wav");
+            _backgroundMusic = LoadMusicStream("assets/sounds/backgroundMusic.mp3");
+            PlayMusicStream(_backgroundMusic);
         }
 
 
@@ -58,6 +64,8 @@ namespace DiscRoom
 
             DefineBoundaries();
             CheckPlayerDeath();
+
+            UpdateMusicStream(_backgroundMusic);
         }
 
         /// <summary>
@@ -160,6 +168,9 @@ namespace DiscRoom
 
             _isPlayerDead = true;
             _camera.Shake(-6, 6, 0.4f);
+
+            PauseMusicStream(_backgroundMusic);
+            PlaySound(_heroDeathSound);
         }
 
         /// <summary>
@@ -172,12 +183,15 @@ namespace DiscRoom
             if (_deathTimer < DEATH_DELAY) return;
 
             ChangeScene(new SceneGameOver(_gameTimer));
+
         }
 
         public override void Unload()
         {
             _player.Unload();   
             _sawManager.Reset(); // libère les textures des scies
+            UnloadSound(_heroDeathSound);
+            UnloadMusicStream(_backgroundMusic);
         }
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using System.Timers;
 using Lib;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
@@ -10,6 +11,7 @@ namespace DiscRoom
 {
     public class Hero : Spritesheet
     {
+       
 
         private const float SPEED = 120;
         private const float FRICTION = 250;
@@ -36,6 +38,7 @@ namespace DiscRoom
         private float _cooldownTimer = 0f;
         private Vector2 _dashDirection = Vector2.Zero;
         private Vector2 _lastDirection = new Vector2(0, 1);
+        private Sound _dashSound;
 
         private const float CHEAT_DURATION = 10;
         private const float CHEAT_ALPHA = 0.5f;
@@ -51,6 +54,14 @@ namespace DiscRoom
         /// </summary>
         public bool IsInvincible => _isDashing || _isCheatActive;
 
+        private Sound _moveSound;
+
+        private const float FOOTSTEP_INTERVAL = 0.35f;
+
+        private float _footstepTimer = 0f;
+
+        private bool IsMoving => Velocity.Length() > 1f;
+
 
 
         public Hero() : base("assets/images/magician.png", 72 / 3, 192 / 8)
@@ -65,7 +76,13 @@ namespace DiscRoom
             FrictionY = FRICTION;
             Scale = new System.Numerics.Vector2(2);
             _trail = new AfterImageTrail(this);
-            HitboxOffset = new Rectangle(14, 20, -28, -24); // hitbox réduite, à ajuster avec IsHitboxVisible = true
+            HitboxOffset = new Rectangle(14, 20, -28, -24);
+
+            _moveSound = LoadSound("assets/sounds/move.wav");
+            _dashSound = LoadSound("assets/sounds/dash.wav");
+
+            SetSoundVolume(_moveSound, 0.3f);
+            SetSoundVolume(_dashSound, 0.4f);
 
 
 
@@ -105,6 +122,8 @@ namespace DiscRoom
                 TryStartDash();
             }
 
+            UpdateFootstepSound(dt);
+
             CheckCheatCode();
             UpdateCheatBonus(dt);
 
@@ -112,6 +131,19 @@ namespace DiscRoom
 
             _trail.Update(dt);
             HandleAnimations();
+        }
+
+        /// <summary>
+        /// Plays the footstep sound at a regular interval while the hero is walking
+        /// </summary>
+        private void UpdateFootstepSound(float dt)
+        {
+            if (_footstepTimer > 0f) _footstepTimer -= dt;
+
+            if (!IsMoving || _isDashing || _footstepTimer > 0f) return;
+
+            PlaySound(_moveSound);
+            _footstepTimer = FOOTSTEP_INTERVAL;
         }
 
         /// <summary>
@@ -129,6 +161,7 @@ namespace DiscRoom
             if (direction != Vector2.Zero)
                 direction = Vector2.Normalize(direction);
 
+
             return direction;
         }
 
@@ -143,6 +176,7 @@ namespace DiscRoom
 
             _lastDirection = direction;
             Velocity = direction * SPEED;
+
         }
 
         /// <summary>
@@ -187,6 +221,8 @@ namespace DiscRoom
             Vector2 inputDirection = GetInputDirection();
             _dashDirection = (inputDirection != Vector2.Zero) ? inputDirection : _lastDirection;
 
+            PlaySound(_dashSound);
+
             Alpha = DASH_ALPHA;
         }
 
@@ -201,7 +237,8 @@ namespace DiscRoom
             if (_dashTimer > 0f) return;
 
             _isDashing = false;
-            Alpha = 255f;
+            Velocity = _dashDirection * SPEED;
+            Alpha = 1f;
         }
 
         /// <summary>

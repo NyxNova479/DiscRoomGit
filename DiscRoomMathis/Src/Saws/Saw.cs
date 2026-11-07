@@ -11,7 +11,7 @@ namespace DiscRoom
         private const string ASSET_PATH = "assets/images/saw.png";
 
         private const float SPAWN_DURATION = 1.5f;
-        private const float MIN_SPAWN_ALPHA = 80f;
+        private const float MIN_SPAWN_ALPHA = 0.3f;
         private const float ROTATION_SPEED = 720f;
         private const float HITBOX_RATIO = 0.8f;
         private const float WARNING_BLINK_SPEED = 12f;
@@ -95,13 +95,13 @@ namespace DiscRoom
             float progress = _spawnTimer / SPAWN_DURATION;
 
             Scale = new Vector2(_targetScale * progress);
-            Alpha = MIN_SPAWN_ALPHA + (255f - MIN_SPAWN_ALPHA) * progress;
+            Alpha = MIN_SPAWN_ALPHA + (1f - MIN_SPAWN_ALPHA) * progress;
         }
 
         private void Activate()
         {
             Scale = new Vector2(_targetScale);
-            Alpha = 255f;
+            Alpha = 1f;
             Velocity = _activeVelocity;
         }
 

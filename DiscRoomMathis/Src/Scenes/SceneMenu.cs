@@ -7,12 +7,20 @@ namespace DiscRoom
 {
     public class SceneMenu : AScene
     {
+
+        private Music _menuMusic;
+
         private float _bestScore;
 
         public override void Load()
         {
             _bestScore = ScoreStorage.LoadBestScore();
+
+            _menuMusic = LoadMusicStream("assets/sounds/menuMusic.mp3");
+            PlayMusicStream(_menuMusic);
         }
+
+
 
         public override void Update(float dt)
         {
@@ -20,6 +28,8 @@ namespace DiscRoom
             {
                 ChangeScene(new SceneGame());
             }
+
+            UpdateMusicStream(_menuMusic);
         }
 
         public override void Draw()
@@ -31,6 +41,11 @@ namespace DiscRoom
 
             TextUtils.DrawTextCentered("Press ENTER to play", centerX, 400f, 36, Color.White);
             TextUtils.DrawTextCentered("Arrows : move   -   Space : dash", centerX, GetScreenHeight() - 60f, 20, Color.Gray);
+        }
+
+        public override void Unload()
+        {
+            UnloadMusicStream(_menuMusic);
         }
     }
 }
